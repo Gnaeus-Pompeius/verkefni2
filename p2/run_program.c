@@ -43,11 +43,9 @@ int run_program(char *file_path, char *argv[]) {
     if (file_path != NULL) {
         if (*argv != NULL) {
         execl(file_path, *argv);
-        wait(NULL);
         return 0;
         }
         execl(file_path, file_path, NULL);
-        wait(NULL);
         return 0;
     }
     return ERROR_CODE;
